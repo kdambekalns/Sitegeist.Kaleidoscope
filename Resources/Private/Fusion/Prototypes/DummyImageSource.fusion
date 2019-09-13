@@ -12,6 +12,9 @@ prototype(Sitegeist.Kaleidoscope:DummyImageSource) {
     width = null
     height = null
     format = null
+
+    // deprecated, use thumbnailPreset instead
+    preset = null
 }
 
 //    this is only for testing of a large variant of dummy images

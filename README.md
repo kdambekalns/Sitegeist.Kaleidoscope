@@ -249,6 +249,7 @@ via fusion but can also applied on the returned object. This will override the f
 All ImageSources support the following fusion properties:
 
 - `thumbnailPreset`: Set width and/or height via named thumbnail preset from Settings `Neos.Media.thumbnailPresets` (default null, settings below override the preset)
+- `preset`: What is now `thumbnailPreset`, deprecated
 - `variantPreset`: Select image variant via named variant preset, given as `IDENTIFIER::VARIANTNAME` keys from Settings `Neos.Media.variantPresets` (default null, settings below override the preset)
 - `width`: Set the intended width (default null)
 - `height`: Set the intended height (default null)
@@ -261,6 +262,7 @@ Arguments:
 - `asset`: An image asset that shall be rendered (defaults to the context value `asset`)
 - `async`: Defer image-rendering until the image is actually requested by the browser (default true)
 - `thumbnailPreset`: `width` and `height` are supported as explained above
+- `preset`: What is now `thumbnailPreset`, deprecated
 - `variantPreset`: as explained above
 
 ### `Sitegeist.Kaleidoscope:DummyImageSource`
@@ -272,6 +274,7 @@ Arguments:
 - `foregroundColor`: The foreground color of the dummy image (default = 'fff')
 - `text`: The text that is rendered on the image (default = null, show size)
 - `thumbnailPreset`: `width` and `height` are supported as explained above
+- `preset`: What is now `thumbnailPreset`, deprecated
 - `variantPreset`: as explained above
 
 
@@ -280,6 +283,7 @@ Arguments:
 Arguments:
 - `uri`: The uri that will be rendered
 - !!! `thumbnailPreset`: `width` and `height` have no effect on this ImageSource
+- !!! `preset`: What is now `thumbnailPreset`, deprecated
 - !!! `variantPreset`: has no effect on this ImageSource
 
 ### `Sitegeist.Kaleidoscope:ResourceImageSource`
@@ -288,6 +292,7 @@ Arguments:
 - `package`: The package key (e.g. `'My.Package'`) (default = false)
 - `path`: Path to resource, either a path relative to `Public` and `package` or a `resource://` URI (default = null)
 - !!! `thumbnailPreset`: `width` and `height` have no effect on this ImageSource
+- !!! `preset`: What is now `thumbnailPreset`, deprecated
 - !!! `variantPreset`: has no effect on this ImageSource
 
 ## ImageSource EEl-Helpers
@@ -299,6 +304,7 @@ dimensions and to render the `src` and `srcset`-attributes.
 Methods of ImageSource-Helpers that are accessible via EEL:
 
 - `applyThumbnailPreset( string )`: Set width and/or height via named thumbnail preset from Settings `Neos.Media.thumbnailPresets`
+- `applyPreset( string )`: What is now `applyThumbnailPreset( string )`, deprecated
 - `useVariantPreset( string, string )`: Select image variant via the named variant preset (parameters are "preset identifier" key and "preset variant name" key from Settings `Neos.Media.variantPresets`)
 - `setWidth( integer $width, bool $preserveAspect = false )`: Set the intend width modify height as well if 
 - `setHeight( integer $height, bool $preserveAspect = false )`: Set the intended height

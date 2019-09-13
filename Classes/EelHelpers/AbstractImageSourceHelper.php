@@ -81,7 +81,7 @@ abstract class AbstractImageSourceHelper implements ImageSourceHelperInterface
      * @param string|null $format
      * @return ImageSourceHelperInterface
      */
-    public function setFormat(?string $format = null) : ImageSourceHelperInterface
+    public function setFormat(?string $format = null): ImageSourceHelperInterface
     {
         $newSource = clone($this);
         $newSource->targetFormat = $format;
@@ -99,6 +99,18 @@ abstract class AbstractImageSourceHelper implements ImageSourceHelperInterface
         $newSource->targetWidth = $targetWidth;
         $newSource->targetHeight = $targetHeight;
         return $newSource;
+    }
+
+    /**
+     * Apply definitions from a thumbnail preset to this image source
+     *
+     * @param string $name
+     * @return ImageSourceHelperInterface
+     * @deprecated use applyThumbnailPreset() instead
+     */
+    public function applyPreset(string $name): ImageSourceHelperInterface
+    {
+        return $this->applyThumbnailPreset($name);
     }
 
     /**
@@ -189,7 +201,7 @@ abstract class AbstractImageSourceHelper implements ImageSourceHelperInterface
      */
     public function allowsCallOfMethod($methodName)
     {
-        if (in_array($methodName, ['setWidth', 'setHeight', 'setDimensions', 'setFormat', 'applyThumbnailPreset', 'useVariantPreset', 'src', 'srcset'])) {
+        if (in_array($methodName, ['setWidth', 'setHeight', 'setDimensions', 'setFormat', 'applyPreset', 'applyThumbnailPreset', 'useVariantPreset', 'src', 'srcset'])) {
             return true;
         }
 

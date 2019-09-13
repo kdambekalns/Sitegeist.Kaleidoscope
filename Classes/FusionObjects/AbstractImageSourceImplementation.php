@@ -34,6 +34,15 @@ abstract class AbstractImageSourceImplementation extends AbstractFusionObject
 
     /**
      * @return string|null
+     * @deprecated use getThumbnailPreset() instead
+     */
+    public function getPreset(): ?string
+    {
+        return $this->getThumbnailPreset();
+    }
+
+    /**
+     * @return string|null
      */
     public function getThumbnailPreset(): ?string
     {
